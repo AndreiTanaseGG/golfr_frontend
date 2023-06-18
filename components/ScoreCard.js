@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import Link from 'next/link'
 import useScoreDelete from '../lib/useScoreDelete'
 import { getUserId } from '../lib/userAuth'
 
@@ -10,11 +10,13 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
   return (
     <div className="flex flex-row p-3 my-4 shadow-md lg:w-1/3 md:w-1/2">
       <div className="w-5/6">
-        <div className="italic text-gray-400">
-          {playedAt}
-        </div>
-        <div>
-          {`${userName} posted a score of ${totalScore}`}
+        <div className="italic text-gray-400">{playedAt}</div>
+        <div className="flex flex-row gap-1">
+          {/* {`${userName} posted a score of ${totalScore}`} */}
+          <Link href={`/golfers/${userId}`}>
+            <a>{`${userName}`}</a>
+          </Link>
+          <p>{`posted a score of ${totalScore}`}</p>
         </div>
       </div>
       <div className="w-1/6">
