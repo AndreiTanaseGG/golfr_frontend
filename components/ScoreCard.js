@@ -12,7 +12,6 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
       <div className="w-5/6">
         <div className="italic text-gray-400">{playedAt}</div>
         <div className="flex flex-row gap-1">
-          {/* {`${userName} posted a score of ${totalScore}`} */}
           <Link href={`/golfers/${userId}`}>
             <a>{`${userName}`}</a>
           </Link>
